@@ -24,7 +24,7 @@ export default function ListEmoji({ selectedEmoji, onEmojiSelect }) {
         <button
           key={index}
           onClick={() => onEmojiSelect(name)}
-          className="w-10 h-10 rounded-full flex items-center justify-center"
+          className="w-10 h-10 rounded-full flex items-center justify-center border-none"
         >
           <img
             src={selectedEmoji === name ? colored : uncolored}

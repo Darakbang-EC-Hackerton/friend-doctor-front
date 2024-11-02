@@ -4,10 +4,14 @@ import ListEmoji from "./listEmoji";
 export default function TodayEmoji() {
   const [selectedEmoji, setSelectedEmoji] = useState("");
   const onSelectEmoji = (emoji) => {
-    setSelectedEmoji(emoji);
+    if (emoji !== selectedEmoji) {
+      setSelectedEmoji(emoji);
+    } else {
+      setSelectedEmoji("");
+    }
   };
   return (
-    <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-md text-center">
+    <div className="w-full max-w-md bg-white rounded-xl py-6 shadow-md text-center">
       <h1 className="text-2xl font-semibold text-green-700 font-['Kantumruy Pro']">
         Hi, James
       </h1>

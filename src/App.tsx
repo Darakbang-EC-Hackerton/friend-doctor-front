@@ -8,10 +8,7 @@ export default function App() {
       path: "/",
       element: <Home />,
     },
-    {
-      path: "/calendar",
-      element: <Calendar />,
-    },
+    { path: "/Calendar", element: <Calendar /> },
   ]);
   return (
     <>
