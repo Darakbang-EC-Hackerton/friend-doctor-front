@@ -7,6 +7,7 @@ import happy from "../assets/SVG/happy_color.svg";
 import mid from "../assets/SVG/mid_color.svg";
 import sad from "../assets/SVG/sad_color.svg";
 import angry from "../assets/SVG/angry_color.svg";
+import empty from "../assets/SVG/Empty.svg";
 import { fetchMonthlyEmotion } from "../api/apiRequest";
 
 export default function CalendarComponent() {
@@ -34,9 +35,7 @@ export default function CalendarComponent() {
         console.error("Error fetching emotions:", error);
       }
     };
-    const year = selectedDate.getFullYear();
-    const month = selectedDate.getMonth() + 1;
-    loadEmotion(year, month);
+    loadEmotion(selectedDate.getFullYear(), selectedDate.getMonth() + 1);
   }, [selectedDate]);
 
   const getEmotionImage = (emotion: string) => {
@@ -52,7 +51,7 @@ export default function CalendarComponent() {
       case "매우 슬픔":
         return angry;
       default:
-        return null;
+        return empty;
     }
   };
 
@@ -86,6 +85,15 @@ export default function CalendarComponent() {
 
           if (emotion) {
             const emotionImage = getEmotionImage(emotion);
+            return (
+              <div className="flex justify-center items-center relative h-full w-full">
+                {emotionImage && (
+                  <img src={emotionImage} alt={emotion} className="h-6 w-6" />
+                )}
+              </div>
+            );
+          } else {
+            const emotionImage = getEmotionImage(empty);
             return (
               <div className="flex justify-center items-center relative h-full w-full">
                 {emotionImage && (
