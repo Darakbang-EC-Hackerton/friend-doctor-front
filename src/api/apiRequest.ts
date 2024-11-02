@@ -15,7 +15,6 @@ export const postEmotion = async (type: string) => {
     }
 
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Error posting emotion data:", error);
@@ -40,7 +39,6 @@ export const fetchTodayEmotion = async () => {
     }
 
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Error posting emotion data:", error);
