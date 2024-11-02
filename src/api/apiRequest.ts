@@ -51,7 +51,13 @@ export const fetchTodayEmotion = async () => {
 export const fetchMonthlyEmotion = async (year: number, month: number) => {
   try {
     const response = await fetch(
-      `http://10.50.97.109:8080/api/v1/emotions/monthly?year=${year}&month=${month}`
+      `http://10.50.97.109:8080/api/v1/emotions/monthly?year=${year}&month=${month}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     const data = await response.json();
     return data;
