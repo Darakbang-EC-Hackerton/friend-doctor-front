@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'Kantumruy Pro': ['Kantumruy Pro']
+        GowunBatangRegular: ['https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff'],
+        InkLipquid: ['https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff']
       }
     },
   },

@@ -24,8 +24,8 @@ export default function TodayPoem() {
   }, []);
 
   return (
-    <div className="w-full max-w-md">
-      <h2 className="text-lg font-bold text-green-600 text-center mb-2 ">
+    <div className="w-full max-w-md bg-[#f8f8f8] font-[Pretendard-Regular]">
+      <h2 className="text-3xl font-bold text-green-600 text-center mb-4 ">
         Today's Poem
       </h2>
       {loading ? (
@@ -38,7 +38,9 @@ export default function TodayPoem() {
             {poem?.title}
           </h3>
           <p className="text-right text-gray-500 mb-4">{poem?.author}</p>
-          <p className="text-gray-700 whitespace-pre-line">{poem?.content}</p>
+          <p className="px-4 text-gray-700 whitespace-pre-line font-[GowunBatang-Regular]">
+            {poem?.content}
+          </p>
         </div>
       )}
     </div>
