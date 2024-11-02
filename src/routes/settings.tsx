@@ -1,3 +1,10 @@
+import BottomNavbar from "../components/bottomNavbar";
+
 export default function Settings() {
-  return <h1>Hello Settings</h1>;
+  return (
+    <div>
+      <h1>Hello Settings</h1>
+      <BottomNavbar />
+    </div>
+  );
 }
