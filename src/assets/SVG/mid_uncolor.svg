@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.56 110.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #444;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4.37px;
+      }
+
+      .cls-2 {
+        fill: #9e9e9e;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #444;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="55.28" cy="55.94" r="53.2" transform="translate(-11.93 15.1) rotate(-14.06)"/>
+  <g>
+    <line class="cls-1" x1="40.53" y1="69.81" x2="70.03" y2="69.81"/>
+    <circle class="cls-3" cx="33.41" cy="48.61" r="4.59"/>
+    <circle class="cls-3" cx="75.11" cy="48.61" r="4.59"/>
+  </g>
+</svg>

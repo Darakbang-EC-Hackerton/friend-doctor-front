@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.56 110.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #444;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4.37px;
+      }
+
+      .cls-2 {
+        fill: #9e9e9e;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-2" cx="55.28" cy="55.28" r="53.2" transform="translate(-10.73 97.17) rotate(-77.4)"/>
+    <circle class="cls-2" cx="55.28" cy="55.28" r="53.2" transform="translate(-10.73 97.17) rotate(-77.4)"/>
+  </g>
+  <g>
+    <path class="cls-1" d="M25.62,65.02s1.73,3.63,7.09,3.63,6.61-3.63,6.61-3.63"/>
+    <path class="cls-1" d="M71.24,65.02s1.73,3.63,7.09,3.63,6.61-3.63,6.61-3.63"/>
+    <path class="cls-1" d="M76.04,89.88s-5.62-10-20.93-10-20.59,10-20.59,10"/>
+    <line class="cls-1" x1="31.1" y1="49.7" x2="41.88" y2="56.73"/>
+    <line class="cls-1" x1="79.87" y1="48.93" x2="67.91" y2="56.73"/>
+  </g>
+</svg>
