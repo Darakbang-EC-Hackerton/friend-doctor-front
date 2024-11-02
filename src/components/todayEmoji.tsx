@@ -4,6 +4,7 @@ import { fetchTodayEmotion, postEmotion } from "../api/apiRequest";
 
 export default function TodayEmoji() {
   const [selectedEmoji, setSelectedEmoji] = useState("");
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     const loadEmotion = async () => {
@@ -11,6 +12,8 @@ export default function TodayEmoji() {
         const response = await fetchTodayEmotion();
         const data = await response.result.type;
         setSelectedEmoji(data);
+        const username = await response.result.username;
+        setUsername(username);
       } catch (error) {
         console.error("Failed to load poems:", error);
       }
@@ -22,14 +25,13 @@ export default function TodayEmoji() {
   const onSelectEmoji = (type: string) => {
     if (type !== selectedEmoji) {
       setSelectedEmoji(type);
-      console.log(type);
       postEmotion(type);
     }
   };
   return (
     <div className="w-full max-w-md bg-white rounded-xl py-6 shadow-md text-center">
       <h1 className="text-2xl font-semibold text-green-700 font-['Kantumruy Pro']">
-        Hi, James
+        Hi, {username}
       </h1>
       <p className="text-gray-500 mt-2">How are you feeling today?</p>
       <ListEmoji selectedEmoji={selectedEmoji} onEmojiSelect={onSelectEmoji} />
