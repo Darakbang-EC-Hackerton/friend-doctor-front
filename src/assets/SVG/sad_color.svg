@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110.56 110.56">
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.56 110.56">
   <defs>
     <style>
       .cls-1 {
@@ -11,7 +11,7 @@
       }
 
       .cls-2 {
-        fill: url(#Degradado_sin_nombre_2);
+        fill: #869ce2;
       }
 
       .cls-2, .cls-3 {
@@ -19,15 +19,9 @@
       }
 
       .cls-3 {
-        fill: #91b5e6;
+        fill: #6876dd;
       }
     </style>
-    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="101.36" y1="28.67" x2="9.19" y2="81.89" gradientTransform="translate(26.36 -17.35) rotate(23.29)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f0c766"/>
-      <stop offset=".36" stop-color="#f0c766"/>
-      <stop offset=".95" stop-color="#eaaf65"/>
-      <stop offset="1" stop-color="#eaad65"/>
-    </linearGradient>
   </defs>
   <circle class="cls-2" cx="55.28" cy="55.28" r="53.2" transform="translate(-17.35 26.36) rotate(-23.29)"/>
   <g>

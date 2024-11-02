@@ -3,7 +3,7 @@ import ListEmoji from "./listEmoji";
 
 export default function TodayEmoji() {
   const [selectedEmoji, setSelectedEmoji] = useState("");
-  const onSelectEmoji = (emoji) => {
+  const onSelectEmoji = (emoji: string) => {
     if (emoji !== selectedEmoji) {
       setSelectedEmoji(emoji);
     } else {

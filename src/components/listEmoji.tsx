@@ -9,26 +9,40 @@ import ColMid from "../assets/SVG/mid_color.svg";
 import ColSad from "../assets/SVG/sad_color.svg";
 import ColAngry from "../assets/SVG/angry_color.svg";
 
-export default function ListEmoji({ selectedEmoji, onEmojiSelect }) {
-  const emojis = [
-    { uncolored: Veryhappy, colored: ColVeryhappy, name: "VeryHappy" },
-    { uncolored: Happy, colored: ColHappy, name: "Happy" },
-    { uncolored: Mid, colored: ColMid, name: "Mid" },
-    { uncolored: Sad, colored: ColSad, name: "Sad" },
-    { uncolored: Angry, colored: ColAngry, name: "Angry" },
+type Emoji = {
+  uncolored: string;
+  colored: string;
+  type: string;
+};
+
+interface ListEmojiProps {
+  selectedEmoji: string;
+  onEmojiSelect: (emojiType: string) => void;
+}
+
+export default function ListEmoji({
+  selectedEmoji,
+  onEmojiSelect,
+}: ListEmojiProps) {
+  const emojis: Emoji[] = [
+    { uncolored: Veryhappy, colored: ColVeryhappy, type: "VeryHappy" },
+    { uncolored: Happy, colored: ColHappy, type: "Happy" },
+    { uncolored: Mid, colored: ColMid, type: "Mid" },
+    { uncolored: Sad, colored: ColSad, type: "Sad" },
+    { uncolored: Angry, colored: ColAngry, type: "Angry" },
   ];
 
   return (
     <div className="flex justify-center space-x-4 mt-4">
-      {emojis.map(({ uncolored, colored, name }, index) => (
+      {emojis.map(({ uncolored, colored, type }, index) => (
         <button
           key={index}
-          onClick={() => onEmojiSelect(name)}
+          onClick={() => onEmojiSelect(type)}
           className="w-10 h-10 rounded-full flex items-center justify-center border-none"
         >
           <img
-            src={selectedEmoji === name ? colored : uncolored}
-            alt={name}
+            src={selectedEmoji === type ? colored : uncolored}
+            alt={type}
             className="w-6 h-6"
           />
         </button>
