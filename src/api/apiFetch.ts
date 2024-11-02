@@ -1,4 +1,4 @@
-export const BASE_URL = "http://10.50.97.109:8081/api/v1";
+export const BASE_URL = "http://10.50.97.109:8080/api/v1";
 export default async function apiFetch(
   endpoint: string,
   options: RequestInit = {}
