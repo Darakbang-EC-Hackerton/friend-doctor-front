@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListEmoji from "./listEmoji";
+import { fetchTodayEmotion, postEmotion } from "../api/apiRequest";
 
 export default function TodayEmoji() {
   const [selectedEmoji, setSelectedEmoji] = useState("");
-  const onSelectEmoji = (emoji: string) => {
-    if (emoji !== selectedEmoji) {
-      setSelectedEmoji(emoji);
-    } else {
-      setSelectedEmoji("");
+
+  useEffect(() => {
+    const loadEmotion = async () => {
+      try {
+        const response = await fetchTodayEmotion();
+        const data = await response.result.type;
+        setSelectedEmoji(data);
+      } catch (error) {
+        console.error("Failed to load poems:", error);
+      }
+    };
+
+    loadEmotion();
+  }, []);
+
+  const onSelectEmoji = (type: string) => {
+    if (type !== selectedEmoji) {
+      setSelectedEmoji(type);
+      console.log(type);
+      postEmotion(type);
     }
   };
   return (

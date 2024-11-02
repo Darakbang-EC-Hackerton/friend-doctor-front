@@ -1,3 +1,11 @@
+import BottomNavbar from "../components/bottomNavbar";
+import CalendarComponent from "../components/calendarCom";
+
 export default function Calendar() {
-  return <h1>Hello Calendar</h1>;
+  return (
+    <div>
+      <CalendarComponent />
+      <BottomNavbar />
+    </div>
+  );
 }

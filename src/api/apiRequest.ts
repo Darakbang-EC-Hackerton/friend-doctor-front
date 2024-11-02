@@ -1,23 +1,61 @@
-import { Poem } from "../types/types";
-import apiFetch from "./apiFetch";
-
-export const fetchPoems = async (): Promise<Poem[]> => {
-  return await apiFetch("/poems");
-};
-
-export const postEmotion = async (memberId: number, type: string) => {
+export const postEmotion = async (type: string) => {
   try {
-    const response = await apiFetch("/emotions", {
+    const response = await fetch("http://10.50.97.109:8080/api/v1/emotions", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        member_id: memberId,
-        type,
+        type: type,
       }),
     });
 
-    return response;
+    if (!response.ok) {
+      throw new Error(`Error posting emotion: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
     console.error("Error posting emotion data:", error);
     throw error;
+  }
+};
+
+export const fetchTodayEmotion = async () => {
+  try {
+    const response = await fetch(
+      "http://10.50.97.109:8080/api/v1/emotions/today",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Error posting emotion: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Error posting emotion data:", error);
+    throw error;
+  }
+};
+
+export const fetchMonthlyEmotion = async (year: number, month: number) => {
+  try {
+    const response = await fetch(
+      `http://10.50.97.109:8080/api/v1/emotions/monthly?year=${year}&month=${month}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching emotions:", error);
   }
 };

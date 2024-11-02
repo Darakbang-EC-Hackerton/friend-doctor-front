@@ -25,11 +25,11 @@ export default function ListEmoji({
   onEmojiSelect,
 }: ListEmojiProps) {
   const emojis: Emoji[] = [
-    { uncolored: Veryhappy, colored: ColVeryhappy, type: "VeryHappy" },
-    { uncolored: Happy, colored: ColHappy, type: "Happy" },
-    { uncolored: Mid, colored: ColMid, type: "Mid" },
-    { uncolored: Sad, colored: ColSad, type: "Sad" },
-    { uncolored: Angry, colored: ColAngry, type: "Angry" },
+    { uncolored: Veryhappy, colored: ColVeryhappy, type: "매우 행복" },
+    { uncolored: Happy, colored: ColHappy, type: "행복" },
+    { uncolored: Mid, colored: ColMid, type: "보통" },
+    { uncolored: Sad, colored: ColSad, type: "슬픔" },
+    { uncolored: Angry, colored: ColAngry, type: "매우 슬픔" },
   ];
 
   return (
