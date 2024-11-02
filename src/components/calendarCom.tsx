@@ -13,7 +13,15 @@ import { fetchMonthlyEmotion } from "../api/apiRequest";
 export default function CalendarComponent() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [emotions, setEmotions] = useState<{ [date: string]: string }>({});
-
+  const [emotionCounts, setEmotionCounts] = useState<{
+    [emotion: string]: number;
+  }>({
+    "매우 행복": 0,
+    행복: 0,
+    보통: 0,
+    슬픔: 0,
+    "매우 슬픔": 0,
+  });
   useEffect(() => {
     const loadEmotion = async (year: number, month: number) => {
       try {
@@ -22,14 +30,25 @@ export default function CalendarComponent() {
           const { year, month, emotions } = data.result;
 
           const emotionsByDate: { [date: string]: string } = {};
+          const counts: { [emotion: string]: number } = {
+            "매우 행복": 0,
+            행복: 0,
+            보통: 0,
+            슬픔: 0,
+            "매우 슬픔": 0,
+          };
           emotions.forEach((entry: { day: number; type: string }) => {
             const dateStr = `${year}-${String(month).padStart(2, "0")}-${String(
               entry.day
             ).padStart(2, "0")}`;
             emotionsByDate[dateStr] = entry.type;
+            if (counts[entry.type] !== undefined) {
+              counts[entry.type] += 1;
+            }
           });
 
           setEmotions(emotionsByDate);
+          setEmotionCounts(counts);
         }
       } catch (error) {
         console.error("Error fetching emotions:", error);
@@ -69,7 +88,7 @@ export default function CalendarComponent() {
 
   return (
     <div className="flex flex-col items-center p-3 bg-white rounded-lg">
-      <h2 className="mb-12">Hello Calendar</h2>
+      <h2 className="mb-12 font-[Pretendard-Regular]">Emotion Calendar</h2>
       <Calendar
         onChange={onDateChange}
         onActiveStartDateChange={onActiveStartDateChange} // Trigger fetch on month change
@@ -79,7 +98,7 @@ export default function CalendarComponent() {
         maxDetail="month"
         showNeighboringMonth={false}
         className="mx-auto w-full text-sm border-b"
-        tileContent={({ date, view }) => {
+        tileContent={({ date }) => {
           const dateStr = moment(date).format("YYYY-MM-DD");
           const emotion = emotions[dateStr];
 
@@ -104,6 +123,22 @@ export default function CalendarComponent() {
           }
         }}
       />
+      <div className="mt-4 w-full">
+        <ul className="space-y-2">
+          {Object.keys(emotionCounts).map((emotion) => (
+            <li
+              key={emotion}
+              className="flex justify-between font-[Pretendard-Regular]"
+            >
+              <span>{emotion}</span>
+              <span className="flex right-0 gap-5">
+                <img src={getEmotionImage(emotion)} className="w-6 h-6" />
+                {emotionCounts[emotion]}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
