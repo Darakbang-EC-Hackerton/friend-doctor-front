@@ -3,7 +3,7 @@ import TodayPoem from "../components/todayPoem";
 
 export default function Home() {
   return (
-    <div className="w-full h-full relative bg-[#f1f1f1] flex">
+    <div className="flex flex-col items-center p-4 space-y-6">
       <TodayEmoji />
       <TodayPoem />
     </div>

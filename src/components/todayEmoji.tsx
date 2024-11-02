@@ -1,15 +1,18 @@
+import { useState } from "react";
 import ListEmoji from "./listEmoji";
 
 export default function TodayEmoji() {
+  const [selectedEmoji, setSelectedEmoji] = useState("");
+  const onSelectEmoji = (emoji) => {
+    setSelectedEmoji(emoji);
+  };
   return (
-    <div className="w-[344px] h-[257px] absolute bg-[#f2f2f2] rounded-[15px] shadow">
-      <div className="w-[195px] h-[45px] absolute text-[#30796c] text-[40px] font-medium font-['Kantumruy Pro']">
+    <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-md text-center">
+      <h1 className="text-2xl font-semibold text-green-700 font-['Kantumruy Pro']">
         Hi, James
-      </div>
-      <div className="w-[290px] h-[35px] absolute text-[#30796c] text-base font-medium font-['Kantumruy Pro']">
-        How are you feeling today?
-      </div>
-      <ListEmoji />
+      </h1>
+      <p className="text-gray-500 mt-2">How are you feeling today?</p>
+      <ListEmoji selectedEmoji={selectedEmoji} onEmojiSelect={onSelectEmoji} />
     </div>
   );
 }

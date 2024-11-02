@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110.56 110.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #444;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4.37px;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_3);
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="31.1" y1="-37.3" x2="-61.07" y2="15.91" gradientTransform="translate(47.1 71.77) rotate(80.85)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0c766"/>
+      <stop offset=".36" stop-color="#f0c766"/>
+      <stop offset=".95" stop-color="#eaaf65"/>
+      <stop offset="1" stop-color="#eaad65"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_3" data-name="Degradado sin nombre 3" x1="55.28" y1="2.07" x2="55.28" y2="108.48" gradientTransform="translate(97.17 -10.73) rotate(77.4)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dc632b"/>
+      <stop offset=".1" stop-color="rgba(220, 100, 44, .98)" stop-opacity=".98"/>
+      <stop offset=".2" stop-color="rgba(221, 104, 47, .93)" stop-opacity=".93"/>
+      <stop offset=".3" stop-color="rgba(222, 111, 52, .84)" stop-opacity=".84"/>
+      <stop offset=".4" stop-color="rgba(224, 120, 59, .71)" stop-opacity=".71"/>
+      <stop offset=".5" stop-color="rgba(226, 132, 69, .55)" stop-opacity=".55"/>
+      <stop offset=".61" stop-color="rgba(229, 147, 81, .34)" stop-opacity=".34"/>
+      <stop offset=".7" stop-color="rgba(232, 164, 94, .11)" stop-opacity=".11"/>
+      <stop offset=".75" stop-color="#eaad65" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <circle class="cls-3" cx="55.28" cy="55.28" r="53.2" transform="translate(-10.73 97.17) rotate(-77.4)"/>
+    <circle class="cls-2" cx="55.28" cy="55.28" r="53.2" transform="translate(-10.73 97.17) rotate(-77.4)"/>
+  </g>
+  <g>
+    <path class="cls-1" d="M25.62,65.02s1.73,3.63,7.09,3.63,6.61-3.63,6.61-3.63"/>
+    <path class="cls-1" d="M71.24,65.02s1.73,3.63,7.09,3.63,6.61-3.63,6.61-3.63"/>
+    <path class="cls-1" d="M76.04,89.88s-5.62-10-20.93-10-20.59,10-20.59,10"/>
+    <line class="cls-1" x1="31.1" y1="49.7" x2="41.88" y2="56.73"/>
+    <line class="cls-1" x1="79.87" y1="48.93" x2="67.91" y2="56.73"/>
+  </g>
+</svg>

@@ -3,25 +3,36 @@ import Happy from "../assets/SVG/happy_uncolor.svg";
 import Mid from "../assets/SVG/mid_uncolor.svg";
 import Sad from "../assets/SVG/sad_uncolor.svg";
 import Angry from "../assets/SVG/angry_uncolor.svg";
+import ColVeryhappy from "../assets/SVG/veryhappy_color.svg";
+import ColHappy from "../assets/SVG/happy_color.svg";
+import ColMid from "../assets/SVG/mid_color.svg";
+import ColSad from "../assets/SVG/sad_color.svg";
+import ColAngry from "../assets/SVG/angry_color.svg";
 
-export default function ListEmoji() {
+export default function ListEmoji({ selectedEmoji, onEmojiSelect }) {
+  const emojis = [
+    { uncolored: Veryhappy, colored: ColVeryhappy, name: "VeryHappy" },
+    { uncolored: Happy, colored: ColHappy, name: "Happy" },
+    { uncolored: Mid, colored: ColMid, name: "Mid" },
+    { uncolored: Sad, colored: ColSad, name: "Sad" },
+    { uncolored: Angry, colored: ColAngry, name: "Angry" },
+  ];
+
   return (
-    <div className="w-[304px] h-12 left-[21px] top-[156px] absolute">
-      <div className="w-12 h-12 left-[256px] top-0 absolute bg-[#fa896b]/40 rounded-[100px]">
-        <img src={Veryhappy} className="w-12 h-12" />
-      </div>
-      <div className="w-12 h-12 left-[194px] top-0 absolute bg-[#8c70c2]/40 rounded-[100px]">
-        <img src={Happy} className="w-12 h-12" />
-      </div>
-      <div className="w-12 h-12 left-[65px] top-0 absolute bg-[#6a97c8]/40 rounded-[100px]">
-        <img src={Mid} className="w-12 h-12" />
-      </div>
-      <div className="w-12 h-12 left-0 top-0 absolute bg-[#ecb446]/40 rounded-[100px]">
-        <img src={Sad} className="w-12 h-12" />
-      </div>
-      <div className="w-12 h-12 left-[130px] top-0 absolute bg-[#d7658f]/40 rounded-[100px]">
-        <img src={Angry} className="w-12 h-12" />
-      </div>
+    <div className="flex justify-center space-x-4 mt-4">
+      {emojis.map(({ uncolored, colored, name }, index) => (
+        <button
+          key={index}
+          onClick={() => onEmojiSelect(name)}
+          className="w-10 h-10 rounded-full flex items-center justify-center"
+        >
+          <img
+            src={selectedEmoji === name ? colored : uncolored}
+            alt={name}
+            className="w-6 h-6"
+          />
+        </button>
+      ))}
     </div>
   );
 }
