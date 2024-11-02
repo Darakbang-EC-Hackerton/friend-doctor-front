@@ -1,11 +1,6 @@
-function createBrowserRouter(
-  routes: RouteObject[],
-  opts?: {
-    basename?: string;
-    future?: FutureConfig;
-    hydrationData?: HydrationState;
-    dataStrategy?: DataStrategyFunction;
-    patchRoutesOnNavigation?: PatchRoutesOnNavigationFunction;
-    window?: Window;
-  }
-): RemixRouter;
+export interface Poem {
+  id: number;
+  title: string;
+  author: string;
+  content: string;
+}
