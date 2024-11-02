@@ -7,7 +7,7 @@ import happy from "../assets/SVG/happy_color.svg";
 import mid from "../assets/SVG/mid_color.svg";
 import sad from "../assets/SVG/sad_color.svg";
 import angry from "../assets/SVG/angry_color.svg";
-import empty from "../assets/SVG/Empty.svg";
+import empty from "../assets/SVG/empty.svg";
 import { fetchMonthlyEmotion } from "../api/apiRequest";
 
 export default function CalendarComponent() {
